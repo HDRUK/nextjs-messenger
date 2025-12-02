@@ -1,1 +1,3 @@
 node_modules/
+## Ignore compiled or generated story files in src so storybook only reads TypeScript versions
+src/**/*.stories.js
