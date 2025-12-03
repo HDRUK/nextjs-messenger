@@ -1,5 +1,6 @@
 export * from "./types";
 export * from "./api/defaultAdapter";
+export * from "./api/serverAdapter";
 export * from "./context";
 export * from "./theme";
 export * from "./components/ThreadsList";
