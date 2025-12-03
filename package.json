@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "main": "./src/messenger/index.ts",
+  "main": "./dist/messenger/index.js",
+  "types": "./dist/messenger/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/messenger/index.js",
+      "types": "./dist/messenger/index.d.ts"
     }
   },
   "scripts": {
