@@ -6,7 +6,8 @@
   "main": "./src/messenger/index.ts",
   "exports": {
     ".": {
-      "import": "./src/messenger/index.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
