@@ -1,3 +1,5 @@
+"use server";
+
 import { MessagingAdapter, MessagingAdapterConfig, ThreadsResponse, Thread, SendMessagePayload, Message } from "../types";
 
 /**
@@ -28,11 +30,9 @@ export class ServerAdapter implements MessagingAdapter {
     return res.json() as Promise<T>;
   }
 
-  async getThreads(senderId: number, receiverId?: number): Promise<ThreadsResponse> {
+  async getThreads(): Promise<ThreadsResponse> {
     let path = `/threads`;
     const query: string[] = [];
-    if (senderId) query.push(`sender_id=${encodeURIComponent(senderId)}`);
-    if (receiverId) query.push(`receiver_id=${encodeURIComponent(receiverId)}`);
     if (query.length) path += `?${query.join("&")}`;
     return this.request<ThreadsResponse>(path);
   }
@@ -42,10 +42,13 @@ export class ServerAdapter implements MessagingAdapter {
   }
 
   async sendMessage(payload: SendMessagePayload): Promise<Message> {
-    return this.request<Message>(`/messages`, {
+    const response = this.request<Message>(`/messages`, {
       method: "POST",
       body: JSON.stringify(payload),
     });
+
+    console.log(response);
+    return response;
   }
 
   async markMessageRead(messageId: number): Promise<void> {
