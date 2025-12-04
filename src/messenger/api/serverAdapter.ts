@@ -32,8 +32,6 @@ export class ServerAdapter implements MessagingAdapter {
 
   async getThreads(): Promise<ThreadsResponse> {
     let path = `/threads`;
-    const query: string[] = [];
-    if (query.length) path += `?${query.join("&")}`;
     return this.request<ThreadsResponse>(path);
   }
 
