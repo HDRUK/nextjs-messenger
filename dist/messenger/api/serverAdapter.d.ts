@@ -12,7 +12,7 @@ export declare class ServerAdapter implements MessagingAdapter {
     private headers;
     constructor(config: MessagingAdapterConfig);
     private request;
-    getThreads(senderId: number, receiverId?: number): Promise<ThreadsResponse>;
+    getThreads(): Promise<ThreadsResponse>;
     getThreadById(id: number): Promise<Thread>;
     sendMessage(payload: SendMessagePayload): Promise<Message>;
     markMessageRead(messageId: number): Promise<void>;
