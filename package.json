@@ -5,12 +5,6 @@
   "type": "module",
   "main": "./dist/messenger/index.js",
   "types": "./dist/messenger/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/messenger/index.js",
-      "types": "./dist/messenger/index.d.ts"
-    }
-  },
   "scripts": {
     "build": "tsc --build",
     "test": "vitest",
