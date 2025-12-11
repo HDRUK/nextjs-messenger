@@ -5,6 +5,21 @@
   "type": "module",
   "main": "./dist/messenger/index.js",
   "types": "./dist/messenger/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/messenger/index.js",
+      "types": "./dist/messenger/index.d.ts"
+    },
+    "./messenger/api/serverAdapter": {
+      "import": "./dist/messenger/api/serverAdapter.js",
+      "types": "./dist/messenger/api/serverAdapter.d.ts",
+      "environment": "node"
+    },
+    "./messenger/api/defaultAdapter": {
+      "import": "./dist/messenger/api/defaultAdapter.js",
+      "types": "./dist/messenger/api/defaultAdapter.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc --build",
     "test": "vitest",
