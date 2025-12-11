@@ -1,4 +1,6 @@
-"use server";
+if (typeof window !== "undefined") {
+    throw new Error("ServerAdapter can only be used on the server side.");
+}
 /**
  * ServerAdapter is intended for usage inside Next.js server components or server-side code.
  * It performs server-side fetches to the upstream messaging API and keeps secrets on the server.

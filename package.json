@@ -5,6 +5,21 @@
   "type": "module",
   "main": "./dist/messenger/index.js",
   "types": "./dist/messenger/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/messenger/index.js",
+      "types": "./dist/messenger/index.d.ts"
+    },
+    "./messenger/api/serverAdapter": {
+      "import": "./dist/messenger/api/serverAdapter.js",
+      "types": "./dist/messenger/api/serverAdapter.d.ts",
+      "environment": "node"
+    },
+    "./messenger/api/defaultAdapter": {
+      "import": "./dist/messenger/api/defaultAdapter.js",
+      "types": "./dist/messenger/api/defaultAdapter.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc --build",
     "test": "vitest",
@@ -26,7 +41,7 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "jsdom": "^27.2.0",
+    "jsdom": "20.0.3",
     "storybook": "^8.6.14",
     "typescript": "^5.0.0",
     "vite": "^6.4.0",
